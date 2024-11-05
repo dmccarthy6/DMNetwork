@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "DMNetwork",
+    platforms: [.iOS(.v16), .watchOS(.v9)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(

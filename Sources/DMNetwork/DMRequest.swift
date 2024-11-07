@@ -26,6 +26,8 @@ public protocol DMRequest: DMEndpoint {
     var cachePolicy: URLRequest.CachePolicy { get }
     /// timeout interval for request. Default is 60 seconds, which is Apple's default.
     var timeoutInterval: TimeInterval { get }
+    /// HTTPBody data for request
+    var httpBody: Data? { get }
     /// URLRequest object which is created usign the url from DMEndpoint
     var urlRequest: URLRequest { get }
 }

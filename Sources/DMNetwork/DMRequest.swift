@@ -17,7 +17,7 @@ public enum HTTPMethod: String {
 
 /// Defines a URLRequest object. This request sets default values (same as Apple's) for
 /// cachePolicy and timeoutInterval. You can update these values to work with your requirements.
-public protocol DMURLRequest: DMEndpoint {
+public protocol DMRequest: DMEndpoint {
     /// The HTTP Method for this request. Available values are:
     /// `.put`, `.post`, `.get`, `.delete`.
     var method: HTTPMethod { get }
@@ -30,12 +30,12 @@ public protocol DMURLRequest: DMEndpoint {
     var urlRequest: URLRequest { get }
 }
 
-extension DMURLRequest {
+extension DMRequest {
     var cachePolicy: URLRequest.CachePolicy {
         .useProtocolCachePolicy
     }
 
-    var timeOutInterval: TimeInterval {
+    var timeoutInterval: TimeInterval {
         60.0
     }
 
